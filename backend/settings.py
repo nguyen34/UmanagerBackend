@@ -180,3 +180,5 @@ CSRF_TRUSTED_ORIGINS = ['http://localhost:3000']
 
 # Needs to be true for production
 SECURE_SSL_REDIRECT = False
+
+AUTH_USER_MODEL = 'users.User'
