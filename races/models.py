@@ -29,12 +29,12 @@ class RaceParticipation(models.Model):
     gate = models.PositiveIntegerField()
     favorite_to_win = models.PositiveIntegerField()
     mood = models.CharField(max_length=20)
+    odds = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
 
 class RaceBets(models.Model):
     race_event = models.ForeignKey(RaceEvent, on_delete=models.CASCADE)
     uma = models.ForeignKey(Uma, on_delete=models.CASCADE)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
-    odds = models.DecimalField(max_digits=10, decimal_places=2)
     payout = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     bettor = models.ForeignKey(User, on_delete=models.CASCADE)
 
